@@ -153,12 +153,13 @@ export class NLP {
 			this.manager.process('ru', text).then((response: any) => {
 				if(response.intent === 'None') {
 					Logger.nlp.trace(`[${chalk.greenBright('Сообщение обработано')}]: Intent не найден: ${text}`);
-					reject(null);
-				} else {
-					Logger.nlp.trace(`[${chalk.greenBright('Сообщение обработано')}]: Intent: ${response.intent}`);
+					return resolve(null);
 				}
+				Logger.nlp.trace(`[${chalk.greenBright('Сообщение обработано')}]: Intent: ${response.intent}`);
 
-				resolve(response);
+				return resolve(response);
+			}).catch((error: Error) => {
+				return reject(error);
 			});
 		});
 	}
