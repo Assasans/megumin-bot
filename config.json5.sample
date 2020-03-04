@@ -1,0 +1,40 @@
+//Rename this file to config.json
+
+{
+	info: {
+		name: 'Megumin Bot',
+		version: '2.0'
+	},
+
+	mysql: {
+		//Database host
+		host: 'localhost',
+
+		//Database username
+		user: 'megumin_bot',
+
+		//Database password
+		password: '',
+
+		//Database name
+		database: 'megumin_bot'
+	},
+
+	nlp: {
+		//Disable in production
+		intents_debug: true
+	},
+	
+	discord: {
+		owners: [
+			//Bot owners
+		],
+
+		accounts: {
+			megumin: {
+				prefix: 'meg!',
+				token: '', //Bot token
+			}
+		}
+	}
+}
