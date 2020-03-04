@@ -43,7 +43,7 @@ export class MySQL {
 			this.db.query('SELECT * FROM args').then(([
 				result
 			]: ResultPacket) => {
-				let args: Array<ReplyArgument> = new Array<ReplyArgument>();
+				let args: Array<ReplyArgument> = [];
 				_(result).each(async (row: RowDataPacket) => {
 					const type: ArgumentType = ArgumentType.get(row['type']);
 
@@ -90,11 +90,11 @@ export class MySQL {
 			this.db.query('SELECT * FROM replies').then(([
 				result
 			]: ResultPacket) => {
-				let replies: Array<Reply> = new Array<Reply>();
+				let replies: Array<Reply> = [];
 				_(result).each(async (row: RowDataPacket) => {
 					const intent: Intent = await this.fetchIntent(row['intent']);
 
-					let entities: Array<Entity> = new Array<Entity>();
+					let entities: Array<Entity> = [];
 					_(JSON5.parse(row['entities'])).each((entry: any, index: number) => {
 						const entity: Entity = Entity.createInstanceObject(entry);
 						entities.push(entity);
@@ -120,11 +120,11 @@ export class MySQL {
 			]).then(async ([
 				result
 			]: ResultPacket) => {
-				let replies: Array<Reply> = new Array<Reply>();
+				let replies: Array<Reply> = [];
 				for(const row of <RowDataPacket[]>result) {
 					const intent: Intent = await this.fetchIntent(row['intent']);
 
-					let entities: Array<Entity> = new Array<Entity>();
+					let entities: Array<Entity> = [];
 					_(JSON5.parse(row['entities'])).each((entry: any, index: number) => {
 						const entity: Entity = Entity.createInstanceObject(entry);
 						entities.push(entity);

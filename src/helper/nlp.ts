@@ -186,7 +186,7 @@ export class NLP {
 			}
 			const intentName: string = response.intent;
 			
-			let entities: Array<Entity> = new Array<Entity>();
+			let entities: Array<Entity> = [];
 			_(response.entities).each((entry: Array<any>, key: string) => {
 				if(key === 'intent') return;
 				_(entry).each((entry: any, index: number) => {
