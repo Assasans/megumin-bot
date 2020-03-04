@@ -124,7 +124,7 @@ export class ArgumentType {
 	private constructor(name: string) {
 		this.name = name;
 
-		if(!ArgumentType._values) ArgumentType._values = new Array<ArgumentType>();
+		if(!ArgumentType._values) ArgumentType._values = [];
 		ArgumentType._values.push(this);
 	}
 
