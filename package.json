@@ -7,8 +7,8 @@
     "build-dev": "tsc --watch",
     "build": "tsc",
     "start": "node .",
-    "dev": "nodemon .",
-    "debug": "node --nolazy --inspect-brk=9229 ."
+    "start-dev": "nodemon .",
+    "start-debug": "node --nolazy --inspect-brk=9229 ."
   },
   "author": "Assasans",
   "license": "ISC",
