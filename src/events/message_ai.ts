@@ -56,6 +56,9 @@ export function register(client: CommandoClient) {
 	
 						await channel.stopTyping(true);
 						return resolve(await message.reply(result));
+					}).catch((error: Error) => {
+						Logger.nlp.warn(error);
+						return reject(error);
 					});
 				}).catch((error: Error) => {
 					Logger.nlp.warn(error);
