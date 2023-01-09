@@ -21,7 +21,7 @@
     "discord.js-commando": "github:Assasans/Commando-ru#djs-v11",
     "json5": "^2.1.1",
     "log4js": "^6.1.0",
-    "luxon": "^1.21.3",
+    "luxon": "^1.28.1",
     "mysql2": "^2.0.0",
     "node-nlp": "^4.0.2",
     "promise-fs": "^2.1.1",
